@@ -230,7 +230,7 @@ content-Type: application/json
 GET http://localhost:9500/api/friendship
 
 
-### // create a new frindship
+### // create a new freindship
 POST http://localhost:9500/api/friendship
 content-Type: application/json
 

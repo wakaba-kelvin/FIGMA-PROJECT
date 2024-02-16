@@ -4,7 +4,7 @@ import { groupValidator } from "../Validator/groupValidator.js";
 // getGroupService
 export const getGroupService = async () => {
     try {
-        const result = await poolRequest().query("SELECT * FROM GroupTable");
+        const result = await poolRequest().query("SELECT * FROM Groups");
         return result.recordset;
     } catch (error) {
         return error;
@@ -24,7 +24,7 @@ export const addGroupService = async (group) => {
             .input('GroupName', sql.VarChar(255), group.GroupName)
             .input('Description', sql.Text, group.Description)
             .input('CreatedDate', sql.DateTime, group.CreatedDate)
-            .query("INSERT INTO GroupTable (GroupID, GroupName, Description, CreatedDate) VALUES (@GroupID, @GroupName, @Description, @CreatedDate)");
+            .query("INSERT INTO Groups (GroupID, GroupName, Description, CreatedDate) VALUES (@GroupID, @GroupName, @Description, @CreatedDate)");
 
         return result;
     } catch (error) {

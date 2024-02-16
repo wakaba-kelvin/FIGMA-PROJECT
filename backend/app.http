@@ -6,19 +6,19 @@ POST http://localhost:9500/api/users
 content-Type: application/json
 
 {
-    "UserID": 5,
-    "Username": "user5",
-    "Email": "kamau5camaw@gmail.com",
+    "UserID": 23,
+    "Username": "user523",
+    "Email": "kimanik918@gmail.com",
     "Password": "password5",
-    "TagName": "tag5",
-    "Location": "othaya"
+    "TagName": "tag23",
+    "Location": "Gikuyu"
 }
 
 ### //delete user
-DELETE http://localhost:9500/api/users/5
+DELETE http://localhost:9500/api/users/23
 
 ### //get a user by its id
-GET http://localhost:9500/api/users/2
+GET http://localhost:9500/api/users/5
 
 ### update user email by id
 PUT http://localhost:9500/api/users/1
@@ -34,25 +34,26 @@ content-Type: application/json
 ### //get all comments
 GET http://localhost:9500/api/comment
 
-### // create a new comment
+####### // create a new comment
 POST http://localhost:9500/api/comment/
 content-Type: application/json
 
 {
-    "CommentID": "4",
-    "PostID": "4",
+    "CommentID": 5,
+    "PostID": 5,
+    "UserID": 5,
     "CommentDate": "2024-02-09",
-    "Content": "this is probably a new comment"
+    "Content": "this is a new comment"
 }
 
 ### // delete a comment
-DELETE http://localhost:9500/api/comment/4
+DELETE http://localhost:9500/api/comment/1
 
 ### //get a comment by its id 
 GET http://localhost:9500/api/comment/3
 
 ### // update a comment by id
-PUT http://localhost:9500/api/comment/1
+PUT http://localhost:9500/api/comment/3
 content-Type: application/json
 
 {
@@ -65,7 +66,7 @@ content-Type: application/json
 ### //GET all posts
 GET http://localhost:9500/api/post
 
-### // create a new post
+######### // create a new post
 POST http://localhost:9500/api/post/
 content-Type: application/json
 
@@ -82,7 +83,7 @@ content-Type: application/json
 DELETE http://localhost:9500/api/post/4
 
 ### //GET post BY ITS ID
-GET http://localhost:9500/api/post/2
+GET http://localhost:9500/api/post/1
 
 ### // update a post by id
 PUT http://localhost:9500/api/post/3
@@ -99,7 +100,7 @@ content-Type: application/json
 ### //GET all photos
 GET http://localhost:9500/api/photo
 
-### // create a new photo
+########### // create a new photo
 POST http://localhost:9500/api/photo
 content-Type: application/json
 
@@ -168,7 +169,7 @@ content-Type: application/json
 ### //GET all groups
 GET http://localhost:9500/api/group
 
-### // create a new message
+### // create a new group
 POST http://localhost:9500/api/group/
 content-Type: application/json
 
@@ -180,13 +181,13 @@ content-Type: application/json
   }
 
 
-### // delete a message by id
+### // delete a Group by id
 DELETE http://localhost:9500/api/group/9
 
-### //GET message BY ITS ID
+### //GET Group BY ITS ID
 GET http://localhost:9500/api/group/9
 
-### // update a message by id
+### // update a Group by id
 PUT http://localhost:9500/api/group/9
 content-Type: application/json
 
@@ -199,13 +200,13 @@ content-Type: application/json
 ### //GET all groupsmembers
 GET http://localhost:9500/api/groupmembers
 
-### // create a new groupmember
+######### // create a new groupmember
 POST http://localhost:9500/api/groupmembers
 content-Type: application/json
 
 {
-    "GroupID": 7,
-    "MemberID": 7
+    "GroupID": 2,
+    "MemberID": 2
 }
 
 ### // delete a groupmember by id
@@ -242,7 +243,7 @@ content-Type: application/json
 }
 
 ### // delete a friendship by id
-DELETE http://localhost:9500/api/friendship/1
+DELETE http://localhost:9500/api/friendship/4
 
 ### //GET friendship BY ITS ID
 GET http://localhost:9500/api/friendsofuser/2

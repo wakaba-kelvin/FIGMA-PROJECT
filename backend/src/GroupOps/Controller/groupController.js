@@ -51,7 +51,7 @@ async function getGroupByIdFromDatabase(groupId) {
     try {
         const result = await poolRequest()
             .input('GroupID', sql.Int, groupId)
-            .query("SELECT * FROM GroupTable WHERE GroupID = @GroupID");
+            .query("SELECT * FROM Groups WHERE GroupID = @GroupID");
 
         return result.recordset[0]; // Assuming group id is unique
     } catch (error) {
@@ -154,7 +154,7 @@ async function getsGroupByIdFromDatabase(groupId) {
     try {
         const result = await poolRequest()
             .input('GroupID', sql.Int, groupId)
-            .query("SELECT * FROM GroupTable WHERE GroupID = @GroupID");
+            .query("SELECT * FROM Groups WHERE GroupID = @GroupID");
 
         return result.recordset[0]; // Assuming GroupID is unique
     } catch (error) {
@@ -166,7 +166,7 @@ async function deleteGroupService(groupId) {
     try {
         await poolRequest()
             .input('GroupID', sql.Int, groupId)
-            .query("DELETE FROM GroupTable WHERE GroupID = @GroupID");
+            .query("DELETE FROM Groups WHERE GroupID = @GroupID");
     } catch (error) {
         throw error;
     }

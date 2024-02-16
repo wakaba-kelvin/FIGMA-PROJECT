@@ -68,7 +68,7 @@ SELECT *
 FROM Photo
 
 -- Create Group Table
-CREATE TABLE GroupTable (
+CREATE TABLE Groups (
     GroupID INT PRIMARY KEY,
     GroupName VARCHAR(255),
     Description TEXT,
@@ -80,7 +80,7 @@ CREATE TABLE GroupMembers (
     GroupID INT,
     MemberID INT,
     PRIMARY KEY (GroupID, MemberID),
-    FOREIGN KEY (GroupID) REFERENCES GroupTable(GroupID),
+    FOREIGN KEY (GroupID) REFERENCES Groups(GroupID),
     FOREIGN KEY (MemberID) REFERENCES Users(UserID)
 );
 
@@ -168,13 +168,13 @@ FROM Photo
 
 
 -- Dummy data for Group table
-INSERT INTO GroupTable (GroupID, GroupName, Description, CreatedDate)
+INSERT INTO Groups (GroupID, GroupName, Description, CreatedDate)
 VALUES 
     (1, 'Group 1', 'Description for Group 1', GETDATE()),
     (2, 'Group 2', 'Description for Group 2', GETDATE());
 
 SELECT * 
-FROM GroupTable
+FROM Groups
 
 -- Dummy data for GroupMembers table
 INSERT INTO GroupMembers (GroupID, MemberID)
@@ -454,16 +454,16 @@ SELECT * FROM Photo;
 --Group Table:
 ----------------
 -- Retrieve all groups
-SELECT * FROM GroupTable;
+SELECT * FROM Groups;
 
 -- Retrieve a group by GroupID
-SELECT * FROM GroupTable WHERE GroupID = 1;
+SELECT * FROM Groups WHERE GroupID = 1;
 
 -- Update group information
-UPDATE GroupTable SET GroupName = 'New Group Name', Description = 'New Description' WHERE GroupID = 1;
+UPDATE Groups SET GroupName = 'New Group Name', Description = 'New Description' WHERE GroupID = 1;
 
 -- Delete a group
-DELETE FROM GroupTable WHERE GroupID = 1;
+DELETE FROM Groups WHERE GroupID = 1;
 
 
 
